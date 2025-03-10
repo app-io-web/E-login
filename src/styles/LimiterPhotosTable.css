@@ -1,0 +1,22 @@
+.limiter-photos-table {
+    background: #ff4b5c;
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    font-weight: bold;
+    width: 300px;
+    margin: 10px auto;
+  }
+  
+  .limiter-photos-table span {
+    font-size: 16px;
+    font-weight: normal;
+  }
+  
+  .limiter-photos-table strong {
+    font-size: 22px;
+  }
+  

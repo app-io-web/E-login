@@ -1,0 +1,60 @@
+/* Barra lateral */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #2c1a4d;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0px 45px 0px 0px;
+  }
+  
+  /* Estilo do usuário */
+  .user-section {
+    display: flex;
+    align-items: center;
+    background: #8c52ff;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .user-icon {
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  
+  /* Menu */
+  .menu h3 {
+    font-size: 16px;
+    color: #d1c4e9;
+    margin-bottom: 10px;
+  }
+  
+  .menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu li {
+    padding: 5px 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+  }
+  
+  .menu li:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+  }
+  
+  .menu-icon {
+    margin-right: 8px;
+    font-size: 16px;
+    color: #d1c4e9;
+  }
+  

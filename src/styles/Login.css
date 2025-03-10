@@ -1,0 +1,160 @@
+/* Login - Ajustando Background Aleatório */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background 0.5s ease-in-out; /* Transição suave */
+}
+
+
+/* Cabeçalho fixo no topo */
+.login-header {
+  width: 100%;
+  text-align: center;
+  background-color: #8c52ff;
+  /*padding: 15px 0;
+  font-size: 24px;*/
+  color: white;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Garante que o cabeçalho fique sobre os outros elementos */
+}
+
+
+
+/* Caixa de login - efeito glassmorphism animado */
+.login-box {
+  background: rgba(255, 255, 255, 0.1); /* Transparência para efeito glass */
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 300px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  animation: glassPulse 3s infinite alternate;
+}
+
+/* Efeito de brilho animado */
+.login-box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 10%, transparent 50%);
+  animation: glassShine 6s infinite linear;
+}
+
+/* Animação de brilho girando */
+@keyframes glassShine {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animação de pulsação sutil */
+@keyframes glassPulse {
+  0% {
+    background: rgba(255, 255, 255, 0.08);
+  }
+  100% {
+    background: rgba(255, 255, 255, 0.15);
+  }
+}
+
+
+/* Logo */
+.login-logo {
+  width: 120px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+/* Campo de entrada */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #8c52ff; /* Mantém a borda roxa */
+  border-radius: 10px;
+  background: #f2ebff;
+  font-size: 16px;
+  color: #4706c9;
+  outline: none; /* REMOVE A BORDA PRETA AO FOCAR */
+  z-index: 10;
+}
+
+/* Efeito ao focar */
+.input-field:focus {
+  border-color: #6d3bd8; /* Mantém o efeito suave ao focar */
+  box-shadow: 0 0 5px rgba(140, 82, 255, 0.5); /* Suaviza a borda ao focar */
+}
+
+
+
+/* Botão de login */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #8c52ff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s;
+  z-index: 10;
+}
+
+.login-button:hover {
+  background: #6d3bd8;
+}
+
+/* Texto de cadastro */
+.register-text {
+  margin-top: 15px;
+  color: white;
+  font-size: 14px;
+  z-index: 10;
+}
+
+.register-link {
+  color: #4706c9;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Estilos para bloquear o acesso no celular */
+.mobile-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.mobile-image {
+  width: 90%;
+  max-width: 500px;
+}

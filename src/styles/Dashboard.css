@@ -1,0 +1,55 @@
+.dashboard {
+  display: flex;
+  justify-content: center; /* Centraliza o conteúdo */
+}
+
+.dashboard-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Se ajusta dinamicamente */
+  grid-template-rows: auto auto;
+  gap: 20px;
+  padding: 30px;
+  width: 100%;
+  max-width: 1400px; /* Limita a largura máxima para evitar espaçamento excessivo */
+  margin: 0 auto; /* Centraliza na tela */
+  justify-items: center;
+  align-items: start;
+}
+
+.limiter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  grid-column: span 1;
+}
+
+.graph-container {
+  grid-column: span 1;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 2560px) {
+  .dashboard-content {
+    max-width: 1600px; /* Ajusta para telas 2K e 4K */
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .dashboard-content {
+    grid-template-columns: repeat(4, 1fr); /* Reduz para 3 colunas em telas menores */
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .dashboard-content {
+    grid-template-columns: repeat(2, 1fr); /* Reduz para 2 colunas em telas médias */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard-content {
+    grid-template-columns: 1fr; /* Apenas uma coluna no mobile */
+  }
+}
