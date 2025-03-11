@@ -5,6 +5,7 @@ import TotalMidia from "../components/TotalMidia";
 import LimiterPhotos from "../components/LimiterPhotos"; 
 import LimiterPhotosTable from "../components/LimiterPhotosTable"; 
 import TablesWithoutPhotos from "../components/TablesWithoutPhotos"; // Importamos o novo componente
+import FotosMesa from "../components/FotosMesa"; // 📌 Importando o novo componente
 import { useLocation } from "react-router-dom";
 import RealTimeGraph from "../components/RealTimeGraph";
 import "../styles/Dashboard.css";
@@ -46,12 +47,14 @@ const Dashboard = () => {
           <LimiterPhotos emailUsuario={emailUsuario} />
           <LimiterPhotosTable emailUsuario={emailUsuario} />
           <TablesWithoutPhotos emailUsuario={emailUsuario} />
+          <FotosMesa />
         </div>
 
         {/* Linha 2 - Gráfico (Ocupando toda a largura) */}
         <div className="graph-container">
           <RealTimeGraph emailUsuario={emailUsuario} />
         </div>
+
       </div>
 
 
