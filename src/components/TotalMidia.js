@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/TotalMidia.css";
+import "../styles/MediaScreen1440px.css";
+
 import { getTotalMidia } from "../services/photosNocodb";
 
 const TotalMidia = ({ emailUsuario }) => {

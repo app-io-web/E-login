@@ -2,36 +2,49 @@ import React, { useEffect, useState } from "react";
 import { getFotosPorMesa } from "../services/getFotosMesa";
 import "../styles/FotosMesa.css";
 
-const FotosMesa = () => {
+const FotosMesa = ({ setMesaAtual, setFotosMesa }) => {
   const [mesasComFotos, setMesasComFotos] = useState([]);
-  const [mesaAtual, setMesaAtual] = useState(0);
+  const [mesaIndex, setMesaIndex] = useState(0);
 
   useEffect(() => {
     const fetchFotos = async () => {
       const fotos = await getFotosPorMesa();
       setMesasComFotos(fotos);
+
+      if (fotos.length > 0) {
+        atualizarMesa(fotos[0].mesa, fotos[0].fotos);
+      }
     };
 
     fetchFotos();
-    const interval = setInterval(fetchFotos, 5000); // Atualiza a cada 5s
+    const interval = setInterval(fetchFotos, 10000); // Atualiza a cada 10s
 
     return () => clearInterval(interval);
   }, []);
 
-  // Alternar automaticamente as mesas a cada 5s
+  // Trocar para a próxima mesa após percorrer todas as fotos da atual
   useEffect(() => {
     if (mesasComFotos.length > 1) {
       const interval = setInterval(() => {
-        setMesaAtual((prev) => (prev + 1) % mesasComFotos.length);
-      }, 5000);
+        setMesaIndex((prevIndex) => {
+          const nextIndex = (prevIndex + 1) % mesasComFotos.length;
+          atualizarMesa(mesasComFotos[nextIndex].mesa, mesasComFotos[nextIndex].fotos);
+          return nextIndex;
+        });
+      }, 5000 * (mesasComFotos[mesaIndex]?.fotos.length || 1)); // Muda de mesa quando todas as fotos forem exibidas
 
       return () => clearInterval(interval);
     }
-  }, [mesasComFotos]);
+  }, [mesasComFotos, mesaIndex]);
 
-  // Trocar manualmente a mesa
+  const atualizarMesa = (mesa, fotos) => {
+    setMesaAtual(mesa);
+    setFotosMesa(fotos);
+  };
+
   const handleMesaChange = (index) => {
-    setMesaAtual(index);
+    setMesaIndex(index);
+    atualizarMesa(mesasComFotos[index].mesa, mesasComFotos[index].fotos);
   };
 
   if (mesasComFotos.length === 0) {
@@ -40,10 +53,16 @@ const FotosMesa = () => {
 
   return (
     <div className="carousel-container">
-      <h2>📸 Fotos Mesa {mesasComFotos[mesaAtual].mesa}</h2>
+      <h2>📸 Fotos Mesa {mesasComFotos[mesaIndex].mesa}</h2>
       <div className="photo-grid">
-        {mesasComFotos[mesaAtual].fotos.map((foto, index) => (
-          <img key={index} src={foto} alt={`Mesa ${mesasComFotos[mesaAtual].mesa}`} className="photo-item" />
+        {mesasComFotos[mesaIndex].fotos.map((foto, index) => (
+          <img
+            key={index}
+            src={foto}
+            alt={`Mesa ${mesasComFotos[mesaIndex].mesa}`}
+            className="photo-item"
+            onClick={() => atualizarMesa(mesasComFotos[mesaIndex].mesa, mesasComFotos[mesaIndex].fotos)}
+          />
         ))}
       </div>
 
@@ -51,14 +70,14 @@ const FotosMesa = () => {
       <div className="mesa-indicators">
         {mesasComFotos.map((_, index) => (
           <span
-            key={index}
-            className={`indicator ${index === mesaAtual ? "active" : ""}`}
-            onClick={() => handleMesaChange(index)}
-          />
-        ))}
-      </div>
+          key={index}
+          className={`indicator ${index === mesaIndex ? "active" : ""}`}
+          onClick={() => handleMesaChange(index)}
+        />
+      ))}
     </div>
-  );
+  </div>
+);
 };
 
 export default FotosMesa;

@@ -13,7 +13,7 @@ export const getTotalMidia = async (emailUsuario) => {
     const query = `?where=(EmailUser,eq,${encodeURIComponent(emailUsuario)})&fields=Photos_Uploads,Gif_Uploads`;
     const response = await api.get(query);
 
-    console.log("📊 Resposta da API para gráfico:", JSON.stringify(response.data, null, 2));
+    //console.log("📊 Resposta da API para gráfico:", JSON.stringify(response.data, null, 2));
 
     if (response.data.list && response.data.list.length > 0) {
       let totalPhotos = 0;
@@ -46,7 +46,7 @@ export const getTotalMidia = async (emailUsuario) => {
         });
       }
 
-      console.log(`✅ Total de fotos: ${totalPhotos}, Total de GIFs: ${totalGifs}`);
+      //console.log(`✅ Total de fotos: ${totalPhotos}, Total de GIFs: ${totalGifs}`);
       return { photos: totalPhotos, gifs: totalGifs };
     }
 

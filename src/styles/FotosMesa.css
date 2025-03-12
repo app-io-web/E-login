@@ -6,6 +6,8 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 500px; /* Limita a largura para manter o layout organizado */
   margin: auto;
+  height: 17vw;
+  width: 16vw;
 }
 
 .photo-grid {
@@ -29,9 +31,10 @@
 }
 
 .mesa-indicators {
-  margin-top: 10px;
+  margin-top: 20vh;
   display: flex;
   justify-content: center;
+  
 }
 
 .indicator {
@@ -47,3 +50,6 @@
   background-color: #8C52FF;
   border: 2px solid white;
 }
+
+
+
