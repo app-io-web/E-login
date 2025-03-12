@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.fc8d61c8.css",
-    "main.js": "/static/js/main.b6da330b.js",
+    "main.css": "/static/css/main.a44582eb.css",
+    "main.js": "/static/js/main.c20e8c16.js",
     "static/js/453.e289a913.chunk.js": "/static/js/453.e289a913.chunk.js",
     "static/media/bg1.jpg": "/static/media/bg1.6a88fd1ce6eaa4faf359.jpg",
     "static/media/bg2.jpg": "/static/media/bg2.9f73956ba2257824c655.jpg",
@@ -10,12 +10,12 @@
     "static/media/Tela Indisponivel.png": "/static/media/Tela Indisponivel.3cd128b22a38c1b4957f.png",
     "static/media/cloudparty-Logo.png": "/static/media/cloudparty-Logo.e426d11ddf4d7cb73056.png",
     "index.html": "/index.html",
-    "main.fc8d61c8.css.map": "/static/css/main.fc8d61c8.css.map",
-    "main.b6da330b.js.map": "/static/js/main.b6da330b.js.map",
+    "main.a44582eb.css.map": "/static/css/main.a44582eb.css.map",
+    "main.c20e8c16.js.map": "/static/js/main.c20e8c16.js.map",
     "453.e289a913.chunk.js.map": "/static/js/453.e289a913.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fc8d61c8.css",
-    "static/js/main.b6da330b.js"
+    "static/css/main.a44582eb.css",
+    "static/js/main.c20e8c16.js"
   ]
 }
